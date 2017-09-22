@@ -1,0 +1,28 @@
+{
+  "name": "bedrock-angular-card-container",
+  "version": "1.0.0",
+  "description": "bedrock-angular-card-container",
+  "main": "index.js",
+  "less": "main.less",
+  "dependencies": {
+    "bedrock-angular": "^4.0.0",
+    "bedrock-angular-credential": "^3.0.0",
+    "bedrock-angular-lazy-compile": "^3.0.0",
+    "bedrock-angular-material": "^1.0.1",
+    "bedrock-angular-media-query": "^2.0.0",
+    "bedrock-angular-modal": "digitalbazaar/bedrock-angular-modal#material",
+    "font-awesome": "^4.7.0",
+    "lodash": "^4.6.1"
+  },
+  "bedrock": {
+    "browserDependencies": "all"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/digitalbazaar/bedrock-angular-card-container.git"
+  },
+  "bugs": {
+    "url": "https://github.com/digitalbazaar/bedrock-angular-card-container/issues"
+  },
+  "homepage": "https://github.com/digitalbazaar/bedrock-angular-card-container#readme"
+}
