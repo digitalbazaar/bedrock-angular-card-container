@@ -8,9 +8,6 @@
 import angular from 'angular';
 import CardContainerComponent from './card-container-component.js';
 
-const module = angular.module(
-  'bedrock.card-container', ['bedrock.credential', 'bedrock.form',
-    'bedrock.lazyCompile', 'bedrock.media-query', 'bedrock.modal',
-    'ngAnimate', 'ngMaterial']);
+const module = angular.module('bedrock.card-container', ['ngMaterial']);
 
 module.component('brCardContainer', CardContainerComponent);

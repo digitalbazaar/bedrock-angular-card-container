@@ -6,13 +6,8 @@
   "less": "main.less",
   "dependencies": {
     "bedrock-angular": "^4.0.0",
-    "bedrock-angular-credential": "^3.0.0",
-    "bedrock-angular-lazy-compile": "^3.0.0",
     "bedrock-angular-material": "^1.0.1",
-    "bedrock-angular-media-query": "^2.0.0",
-    "bedrock-angular-modal": "digitalbazaar/bedrock-angular-modal#material",
-    "font-awesome": "^4.7.0",
-    "lodash": "^4.6.1"
+    "font-awesome": "^4.7.0"
   },
   "bedrock": {
     "browserDependencies": "all"
