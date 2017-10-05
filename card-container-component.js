@@ -5,7 +5,6 @@
  *
  * @author Ganesh Annan
  */
-import angular from 'angular';
 
 export default {
   bindings: {
@@ -28,24 +27,13 @@ function Ctrl($scope) {
 
   self.$onInit = () => {
     originalCards = self.cards;
-    $scope.$on('MOVE_CARDS_UP', e => {
-      up();
-    });
-
-    $scope.$on('MOVE_CARDS_DOWN', e => {
-      down();
-    });
-
-    $scope.$on('MOVE_CARDS_LEFT', e => {
-      left();
-    });
-    $scope.$on('MOVE_CARDS_RIGHT', e => {
-      right();
-    });
+    $scope.$on('MOVE_CARDS_UP', () => up());
+    $scope.$on('MOVE_CARDS_DOWN', () => down());
+    $scope.$on('MOVE_CARDS_LEFT', () => left());
+    $scope.$on('MOVE_CARDS_RIGHT', () => right());
     updateCards();
     self.loading = false;
   };
-
 
   function rightRotate() {
     const lastCard = originalCards.pop();
