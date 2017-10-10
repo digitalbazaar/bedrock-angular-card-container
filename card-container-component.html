@@ -1,5 +1,9 @@
 <div ng-if="!$ctrl.loading">
-  <div class="br-stack" ng-class="$ctrl.layout" style="margin: auto 50px;">
-    <div ng-transclude></div>
+  <div>
+    <div class="br-cc-mobile-container"
+      md-swipe-up="$ctrl.up()"
+      md-swipe-down="$ctrl.down()">
+      <div ng-transclude></div>
+    </div>    
   </div>
 </div>

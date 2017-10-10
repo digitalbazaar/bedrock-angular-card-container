@@ -9,8 +9,7 @@
 export default {
   bindings: {
     cards: '=brCards',
-    maxDisplay: '<brMaxDisplay',
-    layout: '<brLayout'
+    maxDisplay: '<brMaxDisplay'
   },
   transclude: true,
   controller: Ctrl,
@@ -27,10 +26,8 @@ function Ctrl($scope) {
 
   self.$onInit = () => {
     originalCards = self.cards;
-    $scope.$on('MOVE_CARDS_UP', () => up());
-    $scope.$on('MOVE_CARDS_DOWN', () => down());
-    $scope.$on('MOVE_CARDS_LEFT', () => left());
-    $scope.$on('MOVE_CARDS_RIGHT', () => right());
+    $scope.$on('MOVE_CARDS_UP', () => self.up());
+    $scope.$on('MOVE_CARDS_DOWN', () => self.down());
     updateCards();
     self.loading = false;
   };
@@ -49,23 +46,13 @@ function Ctrl($scope) {
     self.cards = originalCards.slice(0, self.maxDisplay);
   }
 
-  function up() {
+  self.down = () => {
     rightRotate();
     updateCards();
   }
 
-  function down() {
+  self.up = () => {
     leftRotate();
-    updateCards();
-  }
-
-  function left() {
-    leftRotate();
-    updateCards();
-  }
-
-  function right() {
-    rightRotate();
     updateCards();
   }
 }

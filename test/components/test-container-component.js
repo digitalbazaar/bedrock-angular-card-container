@@ -9,15 +9,8 @@ export default {
 /* @ngInject */
 function Ctrl($scope) {
   const self = this;
-  self.layout = 'br-stack-column';
   self.up = () => $scope.$broadcast('MOVE_CARDS_UP');
   self.down = () => $scope.$broadcast('MOVE_CARDS_DOWN');
-  self.left = () => $scope.$broadcast('MOVE_CARDS_LEFT');
-  self.right = () => $scope.$broadcast('MOVE_CARDS_RIGHT');
-  self.toggleOrientation = () => {
-    self.layout = self.layout === 'br-stack-row'
-      ? 'br-stack-column' : 'br-stack-row';
-  };
 
   self.cards = [
     {

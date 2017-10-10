@@ -1,18 +1,10 @@
 <div style="padding-bottom: 5vh;">
-  <div ng-if="$ctrl.layout === 'br-stack-column'">
-    <md-button class="md-raised" ng-click="$ctrl.up()">UP</md-button>
-    <md-button class="md-primary md-raised" ng-click="$ctrl.down()">DOWN</md-button>
-    <md-button class="md-accent md-raised" ng-click="$ctrl.toggleOrientation()">Toggle Orientation</md-button>
-  </div>
-  <div ng-if="$ctrl.layout === 'br-stack-row'">
-    <md-button class="md-raised" ng-click="$ctrl.left()">LEFT</md-button>
-    <md-button class="md-primary md-raised" ng-click="$ctrl.right()">RIGHT</md-button>
-    <md-button class="md-accent md-raised" ng-click="$ctrl.toggleOrientation()">Toggle Orientation</md-button>
-  </div>
+  <md-button class="md-raised" ng-click="$ctrl.up()">UP</md-button>
+  <md-button class="md-primary md-raised" ng-click="$ctrl.down()">DOWN</md-button>
 </div>
-<br-card-container br-cards="$ctrl.cards" br-max-display="3" br-layout="$ctrl.layout">
+<br-card-container br-cards="$ctrl.cards" br-max-display="5">
   <div ng-repeat="card in $ctrl.cards">
-    <div class="br-stack-item" style="width: 400px;">
+    <div class="br-cc-mobile-item" style="width: 400px;">
       <br-credential br-credential="card" br-show-actions="false"
         br-options="{displayer: {style: {width: '400px'}}}">
       </br-credential>

@@ -3,83 +3,62 @@
  *
  * Copyright (c) 2015-2017 Digital Bazaar, Inc. All rights reserved.
  */
- .br-stack {
+ .br-cc-mobile-container {
   position: relative;
   max-width: 100%;
+  padding: 100px 0px;
 }
 
-.br-stack div > .br-stack-item {
+.br-cc-mobile-container div > .br-cc-mobile-item {
   max-width: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  outline: 1px solid transparent;
 }
 
-.br-stack-item {
+.br-cc-mobile-item {
   -webkit-transition: -webkit-transform 1s;
   transition: transform 1s;
   transition-timing-function: cubic-bezier(0.18, 0.89, 0.36, 0.91);
 }
 
-/* Stack Column */
-.br-stack-column div > .br-stack-item {
+/* Mobile Container */
+.br-cc-mobile-container div > .br-cc-mobile-item {
   -webkit-transform-origin: 50% -50%;
   transform-origin: 50% -50%;
 }
 
-.br-stack-column div:nth-last-child(7) > .br-stack-item {
-  -webkit-transform: scale(0.70);
-  transform: scale(0.70);
+.br-cc-mobile-container div:nth-last-child(7) > .br-cc-mobile-item {
+  -webkit-transform: scale(0.50);
+  transform: scale(0.50);
 }
 
-.br-stack-column div:nth-last-child(6) > .br-stack-item {
-  -webkit-transform: scale(0.75);
-  transform: scale(0.75);
+.br-cc-mobile-container div:nth-last-child(6) > .br-cc-mobile-item {
+  -webkit-transform: scale(0.55);
+  transform: scale(0.55);
 }
 
-.br-stack-column div:nth-last-child(5) > .br-stack-item {
+.br-cc-mobile-container div:nth-last-child(5) > .br-cc-mobile-item {
+  -webkit-transform: scale(0.6);
+  transform: scale(0.6);
+}
+
+.br-cc-mobile-container div:nth-last-child(4) > .br-cc-mobile-item {
+  -webkit-transform: scale(0.7);
+  transform: scale(0.7);
+}
+
+.br-cc-mobile-container div:nth-last-child(3) > .br-cc-mobile-item {
   -webkit-transform: scale(0.8);
   transform: scale(0.8);
 }
 
-.br-stack-column div:nth-last-child(4) > .br-stack-item {
+.br-cc-mobile-container div:nth-last-child(2) > .br-cc-mobile-item {
   -webkit-transform: scale(0.9);
   transform: scale(0.9);
 }
 
-.br-stack-column div:nth-last-child(3) > .br-stack-item {
+.br-cc-mobile-container div:last-child > .br-cc-mobile-item {
   -webkit-transform: scale(1.0);
   transform: scale(1.0);
-}
-
-.br-stack-column div:nth-last-child(2) > .br-stack-item {
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
-}
-
-.br-stack-column div:last-child > .br-stack-item {
-  -webkit-transform: scale(1.2);
-  transform: scale(1.2);
-}
-
-/* Stack Row */
-.br-stack-row div:first-child,
-.br-stack-row div:nth-child(3) > .br-stack-item {
-  opacity: 1;
-  visibility: visible;
-}
-
-.br-stack-row div:first-child > .br-stack-item {
-  -webkit-transform: translateX(-20%) scale(0.8);
-  transform: translateX(-20%) scale(0.8);
-}
-
-.br-stack-row div:nth-child(3) > .br-stack-item {
-  -webkit-transform: translateX(20%) scale(0.8);
-  transform: translateX(20%) scale(0.8);
-}
-
-.br-stack-row div:nth-child(2) > .br-stack-item {
-  z-index: 99;
 }
