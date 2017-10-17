@@ -11,6 +11,7 @@ function Ctrl($scope) {
   const self = this;
   self.up = () => $scope.$broadcast('MOVE_CARDS_UP');
   self.down = () => $scope.$broadcast('MOVE_CARDS_DOWN');
+  self.select = idx => $scope.$broadcast('SELECT_IDX', { idx });
 
   self.cards = [
     {

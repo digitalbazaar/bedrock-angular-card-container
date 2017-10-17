@@ -1,13 +1,19 @@
 <div style="padding-bottom: 5vh;">
   <md-button class="md-raised" ng-click="$ctrl.up()">UP</md-button>
   <md-button class="md-primary md-raised" ng-click="$ctrl.down()">DOWN</md-button>
+    <md-input-container>
+      <!-- Use floating label instead of placeholder -->
+      <label>Search</label>
+      <input ng-model="searchText" type="text">
+    </md-input-container>
 </div>
 <br-card-container br-cards="$ctrl.cards" br-max-display="5">
-  <div ng-repeat="card in $ctrl.cards">
-    <div class="br-cc-mobile-item" style="width: 400px;">
+  <div ng-repeat="card in $ctrl.cards  | filter: searchText">
+    <div class="br-cc-mobile-item" style="width: 400px;" ng-click="$ctrl.select($index)">
       <br-credential br-credential="card" br-show-actions="false"
         br-options="{displayer: {style: {width: '400px'}}}">
       </br-credential>
     </div>
+    {{card}}
   </div>
 </br-card-container>
