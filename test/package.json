@@ -20,7 +20,6 @@
     "bedrock-angular-modal": "^5.0.0",
     "bedrock-docs": "^2.0.2",
     "bedrock-express": "^2.0.6",
-    "bedrock-requirejs": "^2.1.1",
     "bedrock-server": "^2.0.0",
     "bedrock-validation": "^2.2.0",
     "bedrock-views": "digitalbazaar/bedrock-views#master",
