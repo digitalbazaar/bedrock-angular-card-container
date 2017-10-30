@@ -8,7 +8,8 @@
 
 export default {
   bindings: {
-    cards: '=brCards'
+    cards: '=brCards',
+    id: '<brId'
   },
   transclude: true,
   controller: Ctrl,
@@ -21,11 +22,22 @@ function Ctrl($scope) {
   const self = this;
 
   self.loading = true;
-
   self.$onInit = () => {
-    $scope.$on('MOVE_CARDS_UP', () => self.up());
-    $scope.$on('MOVE_CARDS_DOWN', () => self.down());
-    $scope.$on('SELECT_IDX', (e, args) => self.select(args.idx));
+    $scope.$on('MOVE_CARDS_UP', (e, args) => {
+      if (args.id == self.id) {
+        self.up();
+      }
+    });
+    $scope.$on('MOVE_CARDS_DOWN', (e, args) => {
+      if (args.id === self.id) {
+        self.down();
+      }
+    });
+    $scope.$on('SELECT_IDX', (e, args) => {
+      if (args.id === self.id) {
+        self.select(args.idx);
+      }
+    });
     self.loading = false;
   };
 
@@ -35,8 +47,7 @@ function Ctrl($scope) {
   }
 
   function leftRotate() {
-    const firstCard = self.cards.shift();
-    self.cards = [...self.cards, firstCard];
+    self.cards.push(angular.copy(self.cards.shift()));
   }
 
   function moveToFront(idx) {

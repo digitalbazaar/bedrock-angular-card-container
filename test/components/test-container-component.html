@@ -4,16 +4,17 @@
   <md-input-container>
     <!-- Use floating label instead of placeholder -->
     <label>Search</label>
-    <input ng-model="searchText" type="text">
+    <input ng-model="searchText" type="text" ng-change="$ctrl.filterResults(searchText)">
   </md-input-container>
 </div>
-<br-card-container br-cards="$ctrl.cards">
-  <div ng-repeat="card in $ctrl.cards">
-    <div class="br-cc-mobile-item" style="width: 400px;" ng-click="$ctrl.select($index)">
-      <br-credential br-credential="card" br-show-actions="false"
-        br-options="{displayer: {style: {width: '400px'}}}">
-      </br-credential>
+<div>
+  <br-card-container br-cards="$ctrl.cards" br-id="$ctrl.id">
+    <div ng-repeat="card in $ctrl.cards">
+      <div class="br-cc-mobile-item" style="width: 400px;" ng-click="$ctrl.select($index)">
+        <br-credential br-credential="card" br-show-actions="false"
+          br-options="{displayer: {style: {width: '400px'}}}">
+        </br-credential>
+      </div>
     </div>
-
-  </div>
-</br-card-container>
+  </br-card-container>
+</div>

@@ -11,16 +11,20 @@ export default {
 /* @ngInject */
 function Ctrl($scope, $filter) {
   const self = this;
-  self.up = () => $scope.$broadcast('MOVE_CARDS_UP');
-  self.down = () => $scope.$broadcast('MOVE_CARDS_DOWN');
-  self.select = idx => $scope.$broadcast('SELECT_IDX', { idx });
-  self.cards = originalCards;
+  self.$onInit = () => {
+    self.id = 123456789;
+    self.cards = originalCards;
+    self.filterResults('');
+  };
+  self.down = () => $scope.$broadcast('MOVE_CARDS_DOWN', { id: self.id });
+  self.up = () => $scope.$broadcast('MOVE_CARDS_UP', { id: self.id });
+  self.select = idx => $scope.$broadcast('SELECT_IDX', { id: self.id, idx });
 
-  $scope.$watch("searchText", (newValue, oldValue) => {
-    let tempCards = $filter('filter')(originalCards, $scope.searchText);
-    tempCards = $filter('limitTo')(tempCards, 5);
+  self.filterResults = text => {
+    let tempCards = $filter('filter')(originalCards, text);
+    tempCards = $filter('limitTo')(tempCards, 6);
     self.cards = tempCards;
-  });
+  }
 }
 
 const originalCards = [
