@@ -22,7 +22,7 @@ function Ctrl($scope, $filter) {
 
   self.filterResults = text => {
     let tempCards = $filter('filter')(originalCards, text);
-    tempCards = $filter('limitTo')(tempCards, 6);
+    tempCards = $filter('limitTo')(tempCards, 5);
     self.cards = tempCards;
   }
 }

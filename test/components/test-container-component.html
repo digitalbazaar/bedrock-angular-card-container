@@ -9,12 +9,13 @@
 </div>
 <div>
   <br-card-container br-cards="$ctrl.cards" br-id="$ctrl.id">
-    <div ng-repeat="card in $ctrl.cards">
-      <div class="br-cc-mobile-item" style="width: 400px;" ng-click="$ctrl.select($index)">
+    <br-card-item ng-repeat="card in $ctrl.cards">
+      <div class="br-card-header" style="width: 400px;" ng-click="$ctrl.select($index)">{{card.name}}</div>
+      <div class="br-card-body" style="width: 400px;" ng-click="$ctrl.select($index)">
         <br-credential br-credential="card" br-show-actions="false"
           br-options="{displayer: {style: {width: '400px'}}}">
         </br-credential>
       </div>
-    </div>
+    </br-card-item>
   </br-card-container>
 </div>

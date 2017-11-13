@@ -11,7 +11,9 @@ export default {
     cards: '=brCards',
     id: '<brId'
   },
-  transclude: true,
+  transclude: {
+    'br-card-item': 'brCardItem'
+  },
   controller: Ctrl,
   templateUrl:
     'bedrock-angular-card-container/card-container-component.html'
@@ -35,6 +37,7 @@ function Ctrl($scope) {
     });
     $scope.$on('SELECT_IDX', (e, args) => {
       if (args.id === self.id) {
+        console.log(self.cards[args.idx].name);
         self.select(args.idx);
       }
     });
@@ -51,7 +54,7 @@ function Ctrl($scope) {
   }
 
   function moveToFront(idx) {
-    const front = self.cards.splice(idx, self.cards.length);
+    const front = self.cards.splice(idx - 1, self.cards.length);
     self.cards = [...front, ...self.cards];
   }
 

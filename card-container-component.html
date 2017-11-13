@@ -1,9 +1,9 @@
 <div ng-if="!$ctrl.loading">
   <div>
-    <div class="br-cc-mobile-container"
+    <div class="br-card-container"
       md-swipe-up="$ctrl.up()"
       md-swipe-down="$ctrl.down()">
-      <div ng-transclude></div>
+      <div ng-transclude="br-card-item"></div>
     </div>    
   </div>
 </div>
